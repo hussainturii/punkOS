@@ -1,0 +1,46 @@
+# Local configuration and secrets
+/config.json
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python environments and generated output
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Runtime databases, logs, downloads, indexes and screenshots
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.sqlite3-*
+*.log
+/data/history/
+/data/memory/
+/data/downloads/
+/data/plugins/*/knowledge/
+/benchmarks/results/
+/results/
+/perception_debug.png
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.bak
+*.orig
+*.rej
+*.swp

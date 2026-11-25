@@ -1,0 +1,187 @@
+{
+  "plugin_id": "vscode",
+  "app_name": "Visual Studio Code",
+  "version": "1.1.0",
+  "description": "Expert knowledge for Visual Studio Code: file navigation, terminal control, search and replace, and the command palette.",
+  "author": "PunkOS core team",
+  "match_windows": [
+    "Visual Studio Code",
+    "- Code"
+  ],
+  "knowledge_base": [],
+  "is_active": true,
+  "workflows": [
+    {
+      "name": "open_file_by_name",
+      "description": "Open a file using the Quick Open palette rather than navigating the explorer tree.",
+      "trigger_patterns": [
+        "open file",
+        "go to file",
+        "find file"
+      ],
+      "steps": [
+        {
+          "action_type": "key",
+          "text": "ctrl+p",
+          "description": "Open Quick Open"
+        },
+        {
+          "action_type": "wait",
+          "description": "Let the palette render"
+        },
+        {
+          "action_type": "type",
+          "text": "",
+          "description": "Type the file name from the user's goal",
+          "parameter": "file_name"
+        },
+        {
+          "action_type": "key",
+          "text": "enter",
+          "description": "Open the highlighted result"
+        }
+      ]
+    },
+    {
+      "name": "run_command_palette",
+      "description": "Execute any VS Code command by name through the command palette.",
+      "trigger_patterns": [
+        "command palette",
+        "run command"
+      ],
+      "steps": [
+        {
+          "action_type": "key",
+          "text": "ctrl+shift+p",
+          "description": "Open the command palette"
+        },
+        {
+          "action_type": "wait",
+          "description": "Let the palette render"
+        },
+        {
+          "action_type": "type",
+          "text": "",
+          "description": "Type the command name",
+          "parameter": "command_name"
+        },
+        {
+          "action_type": "key",
+          "text": "enter",
+          "description": "Run it"
+        }
+      ]
+    },
+    {
+      "name": "toggle_terminal",
+      "description": "Show or hide the integrated terminal.",
+      "trigger_patterns": [
+        "terminal",
+        "open terminal"
+      ],
+      "steps": [
+        {
+          "action_type": "key",
+          "text": "ctrl+`",
+          "description": "Toggle the integrated terminal"
+        },
+        {
+          "action_type": "wait",
+          "description": "Let the terminal attach"
+        }
+      ]
+    },
+    {
+      "name": "find_in_all_files",
+      "description": "Search across the whole workspace instead of the current file.",
+      "trigger_patterns": [
+        "search in files",
+        "find in project",
+        "search project"
+      ],
+      "steps": [
+        {
+          "action_type": "key",
+          "text": "ctrl+shift+f",
+          "description": "Open workspace search"
+        },
+        {
+          "action_type": "wait",
+          "description": "Let the search pane focus"
+        },
+        {
+          "action_type": "type",
+          "text": "",
+          "description": "Type the search term",
+          "parameter": "search_term"
+        },
+        {
+          "action_type": "key",
+          "text": "enter",
+          "description": "Run the search"
+        }
+      ]
+    },
+    {
+      "name": "save_all_files",
+      "description": "Persist every modified editor.",
+      "trigger_patterns": [
+        "save all",
+        "save everything"
+      ],
+      "steps": [
+        {
+          "action_type": "key",
+          "text": "ctrl+k",
+          "description": "Start the save-all chord"
+        },
+        {
+          "action_type": "key",
+          "text": "s",
+          "description": "Complete Ctrl+K S"
+        }
+      ]
+    },
+    {
+      "name": "create_code_file",
+      "description": "Create a new file with user-supplied content and save to the requested full path. Inspect each resulting screen; do not restart completed steps.",
+      "trigger_patterns": [
+        "create",
+        "new file",
+        "write code",
+        "python file"
+      ],
+      "steps": [
+        {
+          "action_type": "key",
+          "text": "ctrl+n",
+          "description": "Create a new document without replacing existing work"
+        },
+        {
+          "action_type": "type",
+          "parameter": "requested_content",
+          "description": "Focus the observed editor and enter the content requested by the user"
+        },
+        {
+          "action_type": "key",
+          "text": "ctrl+shift+s",
+          "description": "Open Save As after inspecting editor contents; use mouse menu instead if requested"
+        },
+        {
+          "action_type": "wait",
+          "description": "Inspect Save As and locate File name"
+        },
+        {
+          "action_type": "type",
+          "parameter": "output_full_path",
+          "description": "Enter the exact full path in the observed File name field"
+        },
+        {
+          "action_type": "key",
+          "text": "enter",
+          "description": "Save only if permitted by interaction policy; inspect any conflict dialog and verify output"
+        }
+      ]
+    }
+  ]
+}

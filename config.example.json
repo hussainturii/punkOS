@@ -1,0 +1,89 @@
+{
+  "llm_provider": "ollama",
+  "ollama": {
+    "host": "http://localhost:11434",
+    "model": "qwen2.5:3b",
+    "vision_model": "moondream:latest",
+    "use_vision": false,
+    "temperature": 0,
+    "num_ctx": 4096,
+    "request_timeout": 600,
+    "num_predict": 512,
+    "keep_alive": "10m"
+  },
+  "anthropic": {
+    "api_key": "",
+    "model": "",
+    "max_tokens": 2048
+  },
+  "agent": {
+    "max_steps_per_task": 20,
+    "max_consecutive_failures": 3,
+    "max_elements": 40,
+    "screenshot_max_dimension": 1024,
+    "step_delay_seconds": 1.5,
+    "use_planning_phase": true,
+    "use_memory_recall": false
+  },
+  "safety": {
+    "authorized_directories": [
+      "~/Documents",
+      "~/Downloads",
+      "~/Desktop"
+    ],
+    "blocked_paths": [
+      "C:\\Windows",
+      "C:\\Program Files",
+      "C:\\Program Files (x86)",
+      "C:\\ProgramData"
+    ],
+    "confirm_medium_risk": true
+  },
+  "sandbox": {
+    "enabled": true,
+    "backend": "subprocess",
+    "docker_image": "python:3.11-slim",
+    "timeout_seconds": 30,
+    "memory_limit_mb": 256,
+    "cpu_limit": 0.5
+  },
+  "web": {
+    "enabled": true,
+    "browser": "chromium",
+    "headless": false,
+    "max_tabs": 5,
+    "navigation_timeout_ms": 30000,
+    "download_dir": "data/downloads"
+  },
+  "memory": {
+    "db_path": "data/memory/memory.db",
+    "similarity_threshold": 0.85,
+    "max_preferences_in_prompt": 8
+  },
+  "plugins": {
+    "directory": "data/plugins",
+    "require_validation": true
+  },
+  "history": {
+    "db_path": "data/history/punkos.db"
+  },
+  "audit": {
+    "db_path": "data/history/audit.db",
+    "retention_days": 90
+  },
+  "ui": {
+    "theme": "dark"
+  },
+  "gemini": {
+    "model": "",
+    "connect_timeout": 45.0,
+    "use_vision": true,
+    "vision_for_actions": false
+  },
+  "grok": {
+    "model": ""
+  },
+  "groq": {
+    "model": ""
+  }
+}

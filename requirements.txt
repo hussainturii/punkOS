@@ -1,0 +1,6 @@
+# Full installation: core runtime plus semantic embeddings, voice and Claude.
+-r requirements-core.txt
+sentence-transformers>=2.7.0
+faster-whisper>=1.0.0
+sounddevice>=0.4.6
+anthropic>=0.40.0

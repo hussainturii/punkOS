@@ -1,0 +1,112 @@
+{
+  "plugin_id": "notepad",
+  "app_name": "Notepad",
+  "version": "1.0.0",
+  "description": "Expert knowledge for Windows Notepad: writing, saving, and find/replace. Used as the reference plugin for demos because Notepad ships on every Windows machine.",
+  "author": "PunkOS core team",
+  "match_windows": [
+    "Notepad"
+  ],
+  "knowledge_base": [],
+  "is_active": true,
+  "workflows": [
+    {
+      "name": "write_and_save",
+      "description": "Type text into a new document and save it with a chosen name.",
+      "trigger_patterns": [
+        "write and save",
+        "save the note",
+        "create a note"
+      ],
+      "steps": [
+        {
+          "action_type": "type",
+          "text": "",
+          "description": "Type the body text",
+          "parameter": "body_text"
+        },
+        {
+          "action_type": "key",
+          "text": "ctrl+s",
+          "description": "Open the Save dialog"
+        },
+        {
+          "action_type": "wait",
+          "description": "Let the Save dialog appear"
+        },
+        {
+          "action_type": "type",
+          "text": "",
+          "description": "Type the file name",
+          "parameter": "file_name"
+        },
+        {
+          "action_type": "key",
+          "text": "enter",
+          "description": "Save"
+        }
+      ]
+    },
+    {
+      "name": "find_and_replace",
+      "description": "Replace every occurrence of one string with another.",
+      "trigger_patterns": [
+        "replace",
+        "find and replace"
+      ],
+      "steps": [
+        {
+          "action_type": "key",
+          "text": "ctrl+h",
+          "description": "Open Replace"
+        },
+        {
+          "action_type": "wait",
+          "description": "Let the dialog appear"
+        },
+        {
+          "action_type": "type",
+          "text": "",
+          "description": "Type the search string",
+          "parameter": "search_text"
+        },
+        {
+          "action_type": "key",
+          "text": "tab",
+          "description": "Move to the replacement field"
+        },
+        {
+          "action_type": "type",
+          "text": "",
+          "description": "Type the replacement",
+          "parameter": "replacement_text"
+        },
+        {
+          "action_type": "click",
+          "target_hint": "Replace All",
+          "description": "Apply to all matches"
+        }
+      ]
+    },
+    {
+      "name": "select_all_and_clear",
+      "description": "Empty the document.",
+      "trigger_patterns": [
+        "clear the document",
+        "erase everything"
+      ],
+      "steps": [
+        {
+          "action_type": "key",
+          "text": "ctrl+a",
+          "description": "Select all text"
+        },
+        {
+          "action_type": "key",
+          "text": "delete",
+          "description": "Delete the selection"
+        }
+      ]
+    }
+  ]
+}

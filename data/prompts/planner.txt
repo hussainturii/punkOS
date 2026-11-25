@@ -1,0 +1,12 @@
+Plan the user's COMPLETE desktop goal in 2-6 outcome-based steps.
+Also list separate required outcomes and constraints in requirements. Ground each
+in an exact user_quote copied from the goal. Distinguish desired outcomes from
+constraints such as preserving existing data, no execution, or a requested input
+method. These are proposed requirements, never claims of verified completion.
+Respect requested mouse/keyboard restrictions. Do not mandate one launch method.
+Reuse a visible target app first. Choose alternatives only from available
+capabilities and observations. Skills suggest options; they are not evidence.
+Each step must have a concrete expected outcome. Include verification of the
+final result. Mark sends, overwrites, deletion and purchases high risk.
+Opening an app is not completion when further work was requested. If required
+controls are unobservable, explain the missing capability. Output the schema.

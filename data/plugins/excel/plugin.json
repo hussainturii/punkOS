@@ -1,0 +1,138 @@
+{
+  "plugin_id": "excel",
+  "app_name": "Microsoft Excel",
+  "version": "1.0.1",
+  "description": "Expert knowledge for Microsoft Excel: navigation, cell entry, table formatting, and sorting.",
+  "author": "PunkOS core team",
+  "match_windows": [
+    "Excel",
+    ".csv - Excel"
+  ],
+  "knowledge_base": [],
+  "is_active": true,
+  "workflows": [
+    {
+      "name": "jump_to_cell",
+      "description": "Jump directly to a cell reference instead of scrolling to it.",
+      "trigger_patterns": [
+        "go to cell",
+        "jump to cell",
+        "navigate to cell"
+      ],
+      "steps": [
+        {
+          "action_type": "key",
+          "text": "ctrl+g",
+          "description": "Open the Go To dialog"
+        },
+        {
+          "action_type": "wait",
+          "description": "Let the dialog appear"
+        },
+        {
+          "action_type": "type",
+          "text": "",
+          "description": "Type the cell reference, e.g. B12",
+          "parameter": "cell_reference"
+        },
+        {
+          "action_type": "key",
+          "text": "enter",
+          "description": "Jump there"
+        }
+      ]
+    },
+    {
+      "name": "enter_data_in_cell",
+      "description": "Type a value into the currently selected cell and commit it.",
+      "trigger_patterns": [
+        "enter data",
+        "type in cell",
+        "fill cell"
+      ],
+      "steps": [
+        {
+          "action_type": "type",
+          "text": "",
+          "description": "Type the value",
+          "parameter": "cell_value"
+        },
+        {
+          "action_type": "key",
+          "text": "enter",
+          "description": "Commit and move down"
+        }
+      ]
+    },
+    {
+      "name": "format_as_table",
+      "description": "Convert the current contiguous range into a formatted table.",
+      "trigger_patterns": [
+        "format as table",
+        "make a table",
+        "create table"
+      ],
+      "steps": [
+        {
+          "action_type": "key",
+          "text": "ctrl+t",
+          "description": "Open Create Table"
+        },
+        {
+          "action_type": "wait",
+          "description": "Let the range dialog appear"
+        },
+        {
+          "action_type": "key",
+          "text": "enter",
+          "description": "Accept the detected range"
+        }
+      ]
+    },
+    {
+      "name": "autosum_column",
+      "description": "Insert a SUM formula below the selected column of numbers.",
+      "trigger_patterns": [
+        "autosum",
+        "sum the column",
+        "total the column"
+      ],
+      "steps": [
+        {
+          "action_type": "key",
+          "text": "alt+=",
+          "description": "Insert AutoSum"
+        },
+        {
+          "action_type": "key",
+          "text": "enter",
+          "description": "Commit the formula"
+        }
+      ]
+    },
+    {
+      "name": "sort_selection",
+      "description": "Open the sort dialog for the selected range.",
+      "trigger_patterns": [
+        "sort",
+        "order the data"
+      ],
+      "steps": [
+        {
+          "action_type": "key",
+          "text": "alt+a",
+          "description": "Open the Data ribbon"
+        },
+        {
+          "action_type": "wait",
+          "description": "Let the ribbon expand"
+        },
+        {
+          "action_type": "click",
+          "target_hint": "Sort",
+          "description": "Click the Sort button"
+        }
+      ]
+    }
+  ]
+}
