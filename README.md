@@ -264,6 +264,3 @@ The project remains a research prototype. Accessibility coverage varies between 
 
 Risk checks and confirmations reduce unintended actions but are not a complete boundary around arbitrary GUI interaction. The subprocess code runner uses validation and process separation; it is not equivalent to an operating-system security sandbox. Semantic file search is weaker when using its lexical fallback. Broad accuracy, memory usage and latency claims require repeated controlled measurements.
 
-## Project credits
-
-The supplied project identifies PunkOS as a BS Artificial Intelligence final-year project at COMSATS University Islamabad. Its original README credits **Syed Sajeel Kazmi**, **Syed Muhammad Ali**, and **Mir Zulqarnain ul Haq Awan**. These team credits are retained in this showcase repository.
